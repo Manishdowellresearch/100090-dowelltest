@@ -1,7 +1,7 @@
 ## Database logic for permutation calculator :
 
-###logic for saving data to db
-- json data
+### logic for saving data to db
+- logic data
 ```json
 {
     "eventId":"call event fuction", 
@@ -42,7 +42,7 @@
 
 
 -   let's assume `n=4` and `r=2`
--   json data
+-   example data
 ```json
 {
     "eventId":"call event fuction", 
