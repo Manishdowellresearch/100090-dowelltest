@@ -1,9 +1,4 @@
-## Database logic for permutation calculator :
-
-###logic for saving data to db
-- json data
-```json
-{
+data = {
     "eventId":"call event fuction", 
     "username": "get the user name from the login function",
     "permutation_data": {
@@ -38,13 +33,9 @@
         }
     }
 }
-```
 
 
--   let's assume `n=4` and `r=2`
--   json data
-```json
-{
+permutation_function = {
     "eventId":"call event fuction", 
     "username": "Manish",
     "permutation_data": {
@@ -105,6 +96,4 @@
         }
     }
 }
-
-
-
+    
