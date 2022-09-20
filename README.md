@@ -129,3 +129,39 @@
     }
 - when they do the full sign the role has to be updated in login db , rather it is creating a new account with role as user .
 
+
+
+
+### reports
+- api to get names:
+    `https://100055.pythonanywhere.com/api/report/candidate_name/`
+- api to get task :
+    `https://100055.pythonanywhere.com/api/jobs/get_tasks/`
+    -  product subproduct name title description
+
+- collection(need to complete)
+```json
+{
+    "name":"divya",
+    "Product":"hr-hiring",
+    "sub-product":"hring",
+},
+{
+    "name":"Ayoo",
+    "Product":"hr-hiring",
+    "sub-product":"hring",
+},
+{
+    "name":"Manish",
+    "project":"hr-hiring",
+    "sub-product":"community",
+},
+```
+
+- product : Hr-hiring
+
+    - hiring
+        - divya
+        - ayoo
+
+
