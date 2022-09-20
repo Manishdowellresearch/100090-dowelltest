@@ -1,11 +1,16 @@
 import json
-from multiprocessing import connection
 import requests
 import pprint
 from population import targeted_population
 from connections import connection
 
 #print(connection("dowell is a company"))
-print(targeted_population('hr_hiring','accounts_view', ['application_details'],"life_time"))
-#productname,subproduct,name
-#manish
+#print(targeted_population('hr_hiring','product', ['projects_details'],"life_time"))
+"""
+projects_details= {
+    "username":"Manish",
+    "Product":"HR-Hiring",
+    "Subproduct":"Hiring"
+}
+
+print(connection(projects_detailes))"""

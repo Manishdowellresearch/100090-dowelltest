@@ -39,22 +39,23 @@ def get_event_id():
 
 
     r=requests.post(url,json=data)
-    return r.text  
-    
-def connection(name):
+    return r.text
+
+
+def connection(projects_details):
     url = "http://100002.pythonanywhere.com/" 
     #searchstring="ObjectId"+"("+"'"+"6139bd4969b0c91866e40551"+"'"+")"
     payload = json.dumps({
         "cluster": "hr_hiring",
         "database": "hr_hiring",
-        "collection": "dowelltraining",
-        "document": "dowelltraining",
-        "team_member_ID": "1000554",
+        "collection": "product",
+        "document": "product",
+        "team_member_ID": "1000559",
         "function_ID": "ABCDE",
         "command": "insert",
         "field": {
             "eventId" : get_event_id(),
-            "full_name": name
+            "projects_detailes": projects_details
             },
         "update_field": {
             "order_nos": 21
@@ -65,8 +66,9 @@ def connection(name):
         'Content-Type': 'application/json'
         }
     response = requests.request("POST", url, headers=headers, data=payload)
-    print(response.text)
-
+    res= json.loads(response.text)
+  
+    return res
 
 #63199b4e585165ea7d4efef2
 #63199b99585165ea7d4eff02
@@ -77,5 +79,7 @@ def connection(name):
 {'_id': '6320260837707385c6b162fd', 'eventId': 'FB1010000000166305126257480583', 'full_name': 'chat', 'last_name': 'subproduct'}
 
 {'_id': '6320260837707385c6b162fd', 'eventId': 'FB1010000000166305126257480583', 'full_name': 'bicky', 'last_name': 'subproduct'}
+
+10005projects              10005projects                        
 
 """
