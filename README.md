@@ -105,6 +105,27 @@
         }
     }
 }
+```
 
+##login
 
+- when a person login as a guest login the api returns 
+&nbsp;
+    ```json
+    {
+        "username":"Manish",
+        "role":"guest"
+    }
+    ```
+- Then they will apply for the job , after applying we save like
+&nbsp;
+    ```json
+    {
+        "role":"guest",
+        "application":{
+            "username":"Manish",
+            ..
+        }
+    }
+- when they do the full sign the role has to be updated in login db , rather it is creating a new account with role as user .
 
