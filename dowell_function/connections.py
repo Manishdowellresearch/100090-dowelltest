@@ -55,7 +55,7 @@ def connection(projects_details):
         "command": "insert",
         "field": {
             "eventId" : get_event_id(),
-            "projects_detailes": projects_details
+            "projects_details": projects_details
             },
         "update_field": {
             "order_nos": 21
@@ -70,16 +70,32 @@ def connection(projects_details):
   
     return res
 
-#63199b4e585165ea7d4efef2
-#63199b99585165ea7d4eff02
 
-"""
-{"isSuccess": true, "inserted_id": "6320260837707385c6b162fd"}
+def github(product_details):
+    url = "http://100002.pythonanywhere.com/" 
+    #searchstring="ObjectId"+"("+"'"+"6139bd4969b0c91866e40551"+"'"+")"
+    payload = json.dumps({
+        "cluster": "git_back",
+        "database": "git_back",
+        "collection": "function",
+        "document": "function",
+        "team_member_ID": "1131",
+        "function_ID": "ABCDE",
+        "command": "insert",
+        "field": {
+            "eventId" : get_event_id(),
+            "product_details": product_details
+            },
+        "update_field": {
+            "order_nos": 21
+            },
+        "platform": "bangalore"
+        })
+    headers = {
+        'Content-Type': 'application/json'
+        }
+    response = requests.request("POST", url, headers=headers, data=payload)
+    res= json.loads(response.text)
+  
+    return res
 
-{'_id': '6320260837707385c6b162fd', 'eventId': 'FB1010000000166305126257480583', 'full_name': 'chat', 'last_name': 'subproduct'}
-
-{'_id': '6320260837707385c6b162fd', 'eventId': 'FB1010000000166305126257480583', 'full_name': 'bicky', 'last_name': 'subproduct'}
-
-10005projects              10005projects                        
-
-"""
