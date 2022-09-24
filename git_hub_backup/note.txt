@@ -1,0 +1,46 @@
+database:
+
+1. backup_reports
+2. repository
+3. repository_status
+
+
+db_create:
+
+select * from cluster_master;
+select * from db_master;
+select * from collection_master;
+select * from document_master;
+select * from team_member_rights_tran;
+
+
+insert into cluster_master values(128,'dowellbackup','dowellbackup');
+insert into db_master values(1038,'repository','repository','mongodb',128);
+insert into collection_master values(1143,'backup_reports','backup_reports',1038);
+insert into document_master values('10004502backup','backup_reports','backup_reports',1143);
+insert into team_member_rights_tran values('2022-09-24',100045003,101,101,'10004502backup',1000,2000,10001,10001,10001,'YES');
+
+
+
+-------------------------------
+"cluster": "dowellbackup",
+"database": "repository",
+"collection": "repository",
+"document": "repository_list",
+"team_member_ID": "100045001",
+"function_ID": "ABCDE",
+-------------------------------
+"cluster": "dowellbackup",
+"database": "repository",
+"collection": "repository_status",
+"document": "repository_status",
+"team_member_ID": "100045002",
+"function_ID": "ABCDE",
+--------------------------------
+"cluster": "dowellbackup",
+"database": "repository",
+"collection": "backup_reports",
+"document": "backup_reports",
+"team_member_ID": "100045003",
+"function_ID": "ABCDE",
+--------------------------------
