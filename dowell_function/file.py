@@ -6,7 +6,7 @@ import pprint
 from population import targeted_population
 from connections import connection , github
 
-print(targeted_population('hr_hiring','product', ['projects_details'],"life_time"))
+#print(targeted_population('hr_hiring','product', ['projects_details'],"life_time"))
 
 function_number =[
     '100001', '100002', '100003', '100004', '100005', '100006', '100007', '100008', '100009','100010',
@@ -54,3 +54,11 @@ for i in range(0,90):
 #print(targeted_population('git_back','function',['product_details'],'life_time'))
 
 #print(github())
+
+projects_details = {
+    'workflow_title': "rahul",
+    'steps': ['step1-username', 'step2-username', 'step3-username'],
+    'created_by': "Manish"
+}
+
+print(connection(projects_details))
