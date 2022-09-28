@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse ,JsonResponse
-from function.connection import dowellconnection
+from function.dowellconnection import dowellconnection
 from function.event import get_event_id
 from django.views.decorators.csrf import csrf_exempt
 
