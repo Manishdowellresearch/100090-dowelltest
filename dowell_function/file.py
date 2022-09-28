@@ -41,24 +41,16 @@ function_name = [
     'dowelllegalpractice','dowellpayment','dowellstore','dowelltest','dowellLogoscan'
     ]
 
-a= len(function_number)
+"""a= len(function_number)
 b= len(function_name)
 for i in range(0,90):
     product_details= {
         "function_number":function_number[i],
         "function_name":function_name[i]
     }
-
+"""
     #print(github(product_details))
 
-#print(targeted_population('git_back','function',['product_details'],'life_time'))
+#print(targeted_population('login','login',['Username'],'life_time'))
 
 #print(github())
-
-projects_details = {
-    'workflow_title': "rahul",
-    'steps': ['step1-username', 'step2-username', 'step3-username'],
-    'created_by': "Manish"
-}
-
-print(connection(projects_details))
