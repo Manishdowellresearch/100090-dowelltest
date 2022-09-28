@@ -15,12 +15,12 @@ def scale(request):
 @csrf_exempt
 def scaleapi(request):
     if request.method == "POST":
-        scale_date= request.POST.get('scale_date')
-        field_add ={
+        scale_data =request.POST.get('scale_date')
+        field ={
             "eventId":get_event_id(),
-            "scale_data": scale_date
+            "scale_data": scale_data
         }
-        inserted_id= connection("dowellscale","dowellscale","scale_reports","scale_reports","1094","ABCDE","insert",field_add)
+        inserted_id= connection("dowellscale","dowellscale","scale_reports","scale_reports","1094","ABCDE","insert",field)
         return JsonResponse({
             "inserted_id": inserted_id,
             "status":"Inserted sucessfully" 

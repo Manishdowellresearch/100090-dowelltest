@@ -40,7 +40,7 @@ def get_event_id():
     r=requests.post(url,json=data)
     return r.text
 
-def connection(cluster,database,collection,document,team_member_ID,function_ID,title,paragraph):
+def connection(cluster,database,collection,document,team_member_ID,function_ID,field):
     url = "http://100002.pythonanywhere.com/"
         #searchstring="ObjectId"+"("+"'"+"6139bd4969b0c91866e40551"+"'"+")"
     payload = json.dumps({
@@ -51,11 +51,7 @@ def connection(cluster,database,collection,document,team_member_ID,function_ID,t
         "team_member_ID": team_member_ID,
         "function_ID": function_ID,
         "command": "insert",
-        "field": {
-            "eventId" : get_event_id(),
-            "title": title,
-            "paragraph":paragraph
-            },
+        "field": {field},
         "update_field": {
             "order_nos": 21
             },
