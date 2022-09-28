@@ -15,7 +15,7 @@ def scale(request):
 @csrf_exempt
 def scaleapi(request):
     if request.method == "POST":
-        scale_data =request.POST.get('scale_date')
+        scale_data = request.POST.get('scale_data')
         field ={
             "eventId":get_event_id(),
             "scale_data": scale_data
