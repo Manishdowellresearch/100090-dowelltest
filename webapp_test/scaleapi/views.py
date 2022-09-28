@@ -20,7 +20,7 @@ def scaleapi(request):
             "eventId":get_event_id(),
             "scale_data": scale_data
         }
-        inserted_id= connection("dowellscale","dowellscale","scale_reports","scale_reports","1094","ABCDE","insert",field)
+        inserted_id= connection("dowellscale","scale_reports","scale_reports","1094","ABCDE","insert",field)
         return JsonResponse({
             "inserted_id": inserted_id,
             "status":"Inserted sucessfully" 
