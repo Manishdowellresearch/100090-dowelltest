@@ -110,7 +110,7 @@
 
 # Documentation for scale api :
 
-##api
+## api
 ```python
 
 @csrf_exempt
@@ -147,11 +147,11 @@ def scaleapi(request):
 
 #call dowellevenId and dowellconnection
 ```
-##endpoint url
+## endpoint url
 
 `https://100090.pythonanywhere.com/scaleapi/scaleapi/`
 
-##api call
+## api call
 
 `orientation` `numberrating` `scalecolor` `roundcolor` `fontcolor` `fomat` `time` `template_name` `name` `text` `left` `right` `center` `scale-category`
 
