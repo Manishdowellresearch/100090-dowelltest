@@ -108,36 +108,53 @@
 ```
 
 
-### reports
-- api to get names:
-    `https://100055.pythonanywhere.com/api/report/candidate_name/`
-- api to get task :
-    `https://100055.pythonanywhere.com/api/jobs/get_tasks/`
-    -  product subproduct name title description
+# Documentation for scale api :
 
-- collection(need to complete)
-```json
-{
-    "name":"divya",
-    "Product":"hr-hiring",
-    "sub-product":"hring",
-},
-{
-    "name":"Ayoo",
-    "Product":"hr-hiring",
-    "sub-product":"hring",
-},
-{
-    "name":"Manish",
-    "project":"hr-hiring",
-    "sub-product":"community",
-},
+##api
+```python
+
+@csrf_exempt
+def scaleapi(request):
+    if request.method == "POST":
+        orientation = request.POST.get("orientation")
+        numberrating= request.POST.get("numberrating")
+        scalecolor= request.POST.get("scalecolor")
+        roundcolor= request.POST.get("roundcolor")
+        fontcolor= request.POST.get("fontcolor")
+        fomat= request.POST.get("fomat")
+        time= request.POST.get("time")
+        template_name = request.POST.get("template_name")
+        name= request.POST.get("name")
+        text = request.POST.get("text")
+        left = request.POST.get ("left")
+        right = request.POST.get("right")
+        center = request.POST.get("center") 
+        scale_category = request.POST.get("scale_category")
+        field ={
+            "eventId":get_event_id(),
+            "scale_data": {
+                "orientation":orientation,"numberrating":numberrating,"scalecolor":scalecolor,
+                "roundcolor":roundcolor,"fontcolor":fontcolor,"fomat":fomat,
+                "time":time,"template_name":template_name,"name":name,
+                "text":text, "left":left,"right":right,"center":center, 
+                "scale-category": scale_category}
+        }
+        inserted_id= dowellconnection("dowellscale","dowellscale","scale_reports","scale_reports","1094","ABCDE","insert",field)
+        return JsonResponse({
+            "inserted_id": inserted_id,
+            "status":"Inserted sucessfully" 
+            })
+
+#call dowellevenId and dowellconnection
 ```
+##endpoint url
 
-- product : Hr-hiring
+`https://100090.pythonanywhere.com/scaleapi/scaleapi/`
 
-    - hiring
-        - divya
-        - ayoo
+##api call
+
+`orientation` `numberrating` `scalecolor` `roundcolor` `fontcolor` `fomat` `time` `template_name` `name` `text` `left` `right` `center` `scale-category`
+
+
 
 

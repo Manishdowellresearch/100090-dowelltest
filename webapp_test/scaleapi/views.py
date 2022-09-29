@@ -6,13 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-@csrf_exempt
-def scale(request):
-    if request.method == "POST":
-        data= request.POST.get('data')
-        return JsonResponse({
-            "data": data 
-            })
 
 @csrf_exempt
 def scaleapi(request):
