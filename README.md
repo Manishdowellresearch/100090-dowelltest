@@ -156,13 +156,42 @@ def scaleapi(request):
 `orientation` `numberrating` `scalecolor` `roundcolor` `fontcolor` `fomat` `time` `template_name` `name` `text` `left` `right` `center` `scale-category`
 
 
-## Reports
+## WorkflowAi Reports
 ```json
 {
     "eventId":"eventId",
-    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLINO"],
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI NO"],
     "product_report":{
         "report":"product_report"
     }
 }
+```
+```json
+{
+    "eventId":"eventId",
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI NO"],
+    "product_report":{
+        "report":"product_report"
+    }
+}
+```
 
+## Hr Report
+```json
+{
+    "eventId":"eventId",
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI NO"],
+    "product_report":{
+        "report":"product_report"
+    }
+}
+```
+```json
+{
+    "eventId":"eventId",
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI YES"],
+    "product_report":{
+        "report":"product_report"
+    }
+}
+```
