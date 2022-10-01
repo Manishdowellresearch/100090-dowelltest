@@ -156,5 +156,13 @@ def scaleapi(request):
 `orientation` `numberrating` `scalecolor` `roundcolor` `fontcolor` `fomat` `time` `template_name` `name` `text` `left` `right` `center` `scale-category`
 
 
-
+## Reports
+```json
+{
+    "eventId":"eventId",
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLINO"],
+    "product_report":{
+        "report":"product_report"
+    }
+}
 
