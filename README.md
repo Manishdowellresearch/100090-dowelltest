@@ -169,7 +169,7 @@ def scaleapi(request):
 ```json
 {
     "eventId":"eventId",
-    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI NO"],
+    "Reort":["DOCUMENTATION","ADMIN","SIGN","TIME","MINUTE","DUPLI YES"],
     "product_report":{
         "report":"product_report"
     }
