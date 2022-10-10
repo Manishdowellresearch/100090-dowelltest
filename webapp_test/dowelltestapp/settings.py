@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'editor',
+    'scaleapi',
+    'flutterapp',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
