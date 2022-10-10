@@ -23,3 +23,12 @@ def details(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@csrf_exempt
+def index(request,firstname,lastname):
+    name= firstname+lastname
+    return JsonResponse ({
+        "fullname":name
+    })
+    
