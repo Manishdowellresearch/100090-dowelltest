@@ -25,6 +25,22 @@ def index(request):
             }) 
     return render(request,'report.html')
 
+@csrf_exempt
+def github(request):
+    if request.method == "GET":
+        return JsonResponse({
+            "Status":"Method not allowed. Post data to url"
+        })
+    if request.method == "POST":
+        repository_name = request.POST.get("repository_name")
+        repository_url= request.POST.get("repository_url")
+        return JsonResponse({
+            "repository_name": repository_name,
+            "repository_url" : repository_url
+        }) 
+    
+   
+
 
 
 
