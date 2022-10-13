@@ -38,5 +38,4 @@ def scaleapi(request):
             "inserted_id": inserted_id,
             "status":"Inserted sucessfully" 
             })
-
-
+        

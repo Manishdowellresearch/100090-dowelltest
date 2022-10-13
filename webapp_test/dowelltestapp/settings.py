@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'scaleapi',
     'flutterapp',
     'rest_framework',
+    'getReports',
 ]
 
 MIDDLEWARE = [

@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('editor/',include('editor.urls')),
     path('scaleapi/',include('scaleapi.urls')),
-    path('flutterapp/',include('flutterapp.urls'))
+    path('flutterapp/',include('flutterapp.urls')),
+    path('getReports/',include('getReports.urls')),
 ]
