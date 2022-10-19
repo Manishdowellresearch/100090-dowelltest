@@ -1,4 +1,5 @@
 from dataclasses import field
+from errno import EADDRINUSE
 from django.shortcuts import render
 from django.http import HttpResponse ,JsonResponse
 from function.dowellpopulationfunction import targeted_population
@@ -38,13 +39,3 @@ def github(request):
             "repository_name": repository_name,
             "repository_url" : repository_url
         }) 
-    
-   
-
-
-
-
-
-
-
-
