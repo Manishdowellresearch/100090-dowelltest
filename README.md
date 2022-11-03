@@ -8,20 +8,20 @@
 now main logic :
 
 ```json
-#variable 1:
+
 {
     "Clicked_variable": ['a'],
     "Permutation_result":['a'],
     "final_result":['a']
 }
-#variable 2:
+
 {
     "Clicked_variable": ['%'],
     "Permutation_result":['a%','%a'], 
     "final_result":['a%']
 }
 Note :permutation_result will calculate with final_result
-#variable 3:
+
 {
     "Clicked_variable": ['2'],
     "Permutation_result":['2a%','%2a','%a2], 
