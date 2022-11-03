@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'flutterapp',
     'rest_framework',
     'getReports',
+    'notification',
+    'channels',
+    'rest_framework_swagger',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +66,7 @@ ROOT_URLCONF = 'dowelltestapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +80,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dowelltestapp.wsgi.application'
+ASGI_APPLICATION = 'dowelltestapp.asgi.application'
 
 
 # Database
@@ -130,3 +135,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedidChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    }
+}
