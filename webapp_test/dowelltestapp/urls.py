@@ -15,9 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from django.views.generic import TemplateView
-from rest_framework_swagger.views import get_swagger_view
-schema_view = get_swagger_view(title='Notification API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,11 +22,4 @@ urlpatterns = [
     path('scaleapi/',include('scaleapi.urls')),
     path('flutterapp/',include('flutterapp.urls')),
     path('getReports/',include('getReports.urls')),
-    path('notification/',include('notification.urls')),
-    path('docs/', TemplateView.as_view(
-        template_name='docs.html',
-        extra_context={'schema_url':'openapi-schema'}
-    ), name='docs'),
-    path(r'api-docs/', schema_view),
-
 ]

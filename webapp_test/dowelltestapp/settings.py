@@ -43,10 +43,6 @@ INSTALLED_APPS = [
     'flutterapp',
     'rest_framework',
     'getReports',
-    'notification',
-    'channels',
-    'rest_framework_swagger',
-    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -136,11 +132,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedidChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    }
-}
