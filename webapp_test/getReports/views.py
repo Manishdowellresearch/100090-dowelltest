@@ -39,3 +39,16 @@ def github(request):
             "repository_name": repository_name,
             "repository_url" : repository_url
         }) 
+
+@csrf_exempt
+def tp(request):
+    if request.method == "GET":
+        time_period = "life_time"
+        fetched_data = targeted_population("master_db","database_details",["Database_name"],time_period)
+        return JsonResponse({
+            "Status":fetched_data
+        })
+    else:
+        return JsonResponse({
+            "Status":"Method not allowed. Post data to url"
+        })
