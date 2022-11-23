@@ -1,11 +1,13 @@
-from dataclasses import field
-from errno import EADDRINUSE
 from django.shortcuts import render
 from django.http import HttpResponse ,JsonResponse
 from function.dowellpopulationfunction import targeted_population
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+from .models import repoDetails
+from .serializers import RepoSerializer
+from rest_framework.decorators import api_view
+from rest_framework import status
+from rest_framework.response import Response
 
 
 @csrf_exempt
@@ -52,3 +54,17 @@ def tp(request):
         return JsonResponse({
             "Status":"Method not allowed. Post data to url"
         })
+        
+@api_view(['GET', 'POST'])
+def userdata(request):
+    if request.method == 'GET':
+        repository= repoDetails.objects.all()
+        serializer = RepoSerializer(repository, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = RepoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
