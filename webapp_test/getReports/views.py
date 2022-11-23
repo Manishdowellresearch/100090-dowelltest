@@ -56,7 +56,7 @@ def tp(request):
         })
         
 @api_view(['GET', 'POST'])
-def userdata(request):
+def repository_backup(request):
     if request.method == 'GET':
         repository= repoDetails.objects.all()
         serializer = RepoSerializer(repository, many=True)
