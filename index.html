@@ -24,8 +24,9 @@
               <input type="text" class="form-control" id="RepositoryUrl" placeholder="Enter RepositoryUrl">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" id="policy" name="policy" value="policy">
-              <a href='https://100087.pythonanywhere.com/policy/FB1010000000001665306290565391/website-privacy-policy/?redirect_url=https://manishdowellresearch.github.io/100090-dowelltest/'>
+              <input type="checkbox" id="policy" name="policy" value="policy">
+              <button onclick="getPolicyStatus()" value="i_agree"></button>
+              <a href='https://100087.pythonanywhere.com/tkr-policy/FB1010000000001665306290565391/website-privacy-policy?redirect_url=https://manishdowellresearch.github.io/100090-dowelltest&policy_request_id=FB101000000000166530629056539143455595959'>
                 I agree with to the privacy policy and terms and conditions
               </a>
             </div>
@@ -38,6 +39,14 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script>
+      const getPolicyStatus = async () => {
+        const response = await   fetch('https://100087.pythonanywhere.com/', {method: 'GET'})
+        const data = response.data.json();
+        console.log(data)
+        return data.i_agree
+      } 
+    </script>
     <script>
         var form=document.getElementById('form')
 
