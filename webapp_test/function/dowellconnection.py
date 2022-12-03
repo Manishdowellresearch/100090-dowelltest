@@ -3,7 +3,7 @@ import requests
 import pprint
 
 
-def dowellconnection(cluster,database,collection,document,team_member_ID,function_ID,command,field):
+def dowellconnection(cluster,database,collection,document,team_member_ID,function_ID,command,field,updated_field):
     url = "http://100002.pythonanywhere.com/"
         #searchstring="ObjectId"+"("+"'"+"6139bd4969b0c91866e40551"+"'"+")"
     payload = json.dumps({
@@ -15,9 +15,7 @@ def dowellconnection(cluster,database,collection,document,team_member_ID,functio
         "function_ID": function_ID,
         "command": command,
         "field": field,
-        "update_field": {
-            "order_nos": 21
-            },
+        "update_field": updated_field,
         "platform": "bangalore"
         })
     headers = {

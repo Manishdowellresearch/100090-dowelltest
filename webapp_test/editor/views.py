@@ -8,6 +8,8 @@ from function.event import get_event_id
 from function.connection import connection
 from django.views.decorators.csrf import csrf_exempt
 from .editor import generate_editor_link
+import json
+
 
 def index(request):
     response = targeted_population('social-media-auto','step2_data',  ['title'], 'life_time')
