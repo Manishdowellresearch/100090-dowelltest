@@ -3,9 +3,12 @@ from django.http import HttpResponse
 import requests
 from django.http import JsonResponse
 from function.dowellpopulationfunction import targeted_population
+from function.dowellconnection import dowellconnection
+from function.event import get_event_id
 from function.connection import connection
 from django.views.decorators.csrf import csrf_exempt
 from .editor import generate_editor_link
+
 def index(request):
     response = targeted_population('social-media-auto','step2_data',  ['title'], 'life_time')
     #print(response['normal']['data'][0])
@@ -44,3 +47,40 @@ def editor_load(request):
     print(generate_link)
     return redirect(generate_link)
 
+@csrf_exempt
+def get_link(request):
+    if request.method == "GET":
+        field = {
+            "eventId":get_event_id(),
+            "created_by":"Manish",
+            "company_id":"555553",
+            "template_name":"",
+            "content": "",
+        }
+        update_field= {
+            "order_nos": 21
+        }
+        response= dowellconnection("Documents","Documentation","editor","editor","100084006","ABCDE","insert",field,update_field)
+        print("<------response----->",response)
+        url="https://100058.pythonanywhere.com/api/generate-editor-link/"
+        payload = json.dumps({
+            "product_name": "workflowai",
+            "details":{
+                "_id":response,
+                "action":"template",
+                "field":"template_name",
+                "cluster": "Documents",
+                "database": "Documentation",
+                "collection": "editor",
+                "document": "editor",
+                "team_member_ID": "100084006",
+                "function_ID": "ABCDE",
+                "command": "update",
+                "update_field": {
+                "template_name":"",
+                "content":""
+                }
+            }
+        })
+        responses = requests.request("POST", url,data=payload)
+        return JsonResponse({"link":responses.text})
