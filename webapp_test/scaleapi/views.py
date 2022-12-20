@@ -4,6 +4,7 @@ from function.dowellconnection import dowellconnection
 from function.event import get_event_id
 from django.views.decorators.csrf import csrf_exempt
 import json
+import requests
 
 
 
@@ -38,4 +39,4 @@ def scaleapi(request):
             "inserted_id": inserted_id,
             "status":"Inserted sucessfully" 
             })
-        
+

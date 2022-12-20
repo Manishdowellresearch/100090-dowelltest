@@ -22,4 +22,5 @@ urlpatterns = [
     path('scaleapi/',include('scaleapi.urls')),
     path('flutterapp/',include('flutterapp.urls')),
     path('getReports/',include('getReports.urls')),
+    path('testing_functions/',include('testing_functions.urls')),
 ]

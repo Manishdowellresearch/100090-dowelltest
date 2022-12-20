@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'flutterapp',
     'rest_framework',
     'getReports',
+    'testing_functions',
 ]
 
 MIDDLEWARE = [
